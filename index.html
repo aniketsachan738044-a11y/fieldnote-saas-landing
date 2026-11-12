@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fieldnote — Calm Project Tracking for Small Studios</title>
+  <meta name="description" content="Fieldnote helps small product teams and studios share weekly client updates, track deliverables, and stay on schedule without bloated tools." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ================= NAVIGATION BAR ================= -->
+  <header class="navbar" id="top">
+    <div class="container nav-container">
+      <a href="#top" class="logo" aria-label="Fieldnote Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="5" fill="currentColor" />
+            <path d="M7 8H17M7 12H14M7 16H11" stroke="#faf9f6" stroke-width="2.2" stroke-linecap="round" />
+          </svg>
+        </span>
+        <span class="logo-text">Fieldnote</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta-mobile">Get Started</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary btn-sm" id="openDemoModalBtn">Get Started</button>
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="badge">Made for 3&ndash;20 person studios</span>
+          <h1>Ship client work on time without chasing status updates.</h1>
+          <p class="hero-subtitle">
+            Fieldnote replaces messy spreadsheets and long Friday check-in calls with one shared board for deliverables, deadlines, and client-ready progress notes.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Request a Demo</a>
+            <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+          </div>
+          <p class="hero-note">Free for small teams &bull; 14-day Pro trial &bull; No card required</p>
+        </div>
+
+        <!-- Interactive Deliverable Preview -->
+        <div class="hero-visual" aria-label="Interactive Fieldnote deliverable board">
+          <div class="mockup-card">
+            <div class="mockup-header">
+              <div>
+                <span class="mockup-kicker">Active Milestone</span>
+                <strong class="mockup-title">Mobile App Redesign &bull; Week 3</strong>
+              </div>
+              <span class="mockup-pill" id="heroProgressPill">1 / 3 Done</span>
+            </div>
+
+            <div class="mockup-stats">
+              <div class="stat-box">
+                <span class="stat-label">Target Launch</span>
+                <strong class="stat-value">Nov 28</strong>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">Open Blockers</span>
+                <strong class="stat-value">0</strong>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">Client Digest</span>
+                <strong class="stat-value">Fri 4 PM</strong>
+              </div>
+            </div>
+
+            <p class="mockup-hint">Click any task below to test the live progress tracker:</p>
+
+            <div class="mockup-list" id="heroTaskList">
+              <button type="button" class="mockup-item is-done" data-done="true">
+                <span class="task-checkbox" aria-hidden="true">&#10003;</span>
+                <span class="item-text">
+                  <strong>Finalize onboarding wireframes</strong>
+                  <span>Maya &bull; Design Review</span>
+                </span>
+                <span class="tag tag-done">Done</span>
+              </button>
+
+              <button type="button" class="mockup-item" data-done="false">
+                <span class="task-checkbox" aria-hidden="true"></span>
+                <span class="item-text">
+                  <strong>Build responsive pricing table</strong>
+                  <span>Rohan &bull; Due Today</span>
+                </span>
+                <span class="tag tag-progress">In Progress</span>
+              </button>
+
+              <button type="button" class="mockup-item" data-done="false">
+                <span class="task-checkbox" aria-hidden="true"></span>
+                <span class="item-text">
+                  <strong>Send weekly client summary</strong>
+                  <span>Ananya &bull; Scheduled Fri</span>
+                </span>
+                <span class="tag tag-todo">Up Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES SECTION ================= -->
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Features</span>
+          <h2>Just the essentials to keep projects moving</h2>
+          <p>No complex ticket hierarchies or 40-field forms. Every feature earns its place.</p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="icon-box" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <line x1="9" y1="10" x2="9" y2="20"></line>
+              </svg>
+            </div>
+            <h3>Milestone Boards</h3>
+            <p>Group deliverables by week or release so everyone sees what needs to ship next and who owns it.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon-box" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <h3>One-Click Client Digests</h3>
+            <p>Turn completed tasks into a clean weekly summary email for clients or stakeholders in seconds.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon-box" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"></circle>
+                <polyline points="12 7 12 12 15 15"></polyline>
+              </svg>
+            </div>
+            <h3>Early Blocker Alerts</h3>
+            <p>Flag overdue items or stalled reviews early in the week instead of discovering delays on launch day.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT / HOW IT WORKS SECTION ================= -->
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <div class="about-layout">
+          <div class="about-intro">
+            <span class="section-eyebrow">About &amp; How It Works</span>
+            <h2>Designed for teams who hate spending Mondays updating trackers</h2>
+            <p>
+              Enterprise tools are built for 500-person org charts. Fieldnote gives designers, developers, and studio leads a lightweight rhythm that takes five minutes a day to maintain.
+            </p>
+            <a href="#contact" class="btn btn-secondary">Book a 15-Min Walkthrough</a>
+          </div>
+
+          <div class="steps-list">
+            <div class="step-card">
+              <span class="step-number">01</span>
+              <div>
+                <h3>Set Your Weekly Milestones</h3>
+                <p>Create a project, add deliverables with clear due dates, and assign one owner per task.</p>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <span class="step-number">02</span>
+              <div>
+                <h3>Check Off Work As You Go</h3>
+                <p>Teammates update status directly on the board—no mandatory standup forms or status meetings.</p>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <span class="step-number">03</span>
+              <div>
+                <h3>Share Friday Progress Notes</h3>
+                <p>Send a tidy recap link or email to your client showing what shipped and what is queued next.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRICING SECTION ================= -->
+    <section class="section section-alt" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Pricing</span>
+          <h2>Honest pricing that scales with your studio</h2>
+          <p>Start free with your core team, then upgrade when you add more client projects.</p>
+
+          <div class="billing-toggle" role="group" aria-label="Billing frequency">
+            <span class="billing-label active" id="monthlyLabel">Monthly</span>
+            <button
+              type="button"
+              class="toggle-switch"
+              id="billingToggle"
+              aria-pressed="false"
+              aria-label="Toggle annual billing for 20% discount"
+            >
+              <span class="toggle-knob"></span>
+            </button>
+            <span class="billing-label" id="yearlyLabel">
+              Yearly <span class="save-badge">Save 20%</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Plan 1: Starter -->
+          <article class="pricing-card">
+            <div class="plan-header">
+              <h3>Starter</h3>
+              <p>For freelancers and solo builders.</p>
+            </div>
+            <div class="plan-price">
+              <span class="currency">$</span>
+              <span class="amount" data-monthly="0" data-yearly="0">0</span>
+              <span class="period">/ month</span>
+            </div>
+            <ul class="plan-features">
+              <li>Up to 3 team members</li>
+              <li>2 active project boards</li>
+              <li>Weekly summary previews</li>
+              <li>Email support</li>
+            </ul>
+            <button type="button" class="btn btn-secondary btn-block select-plan-btn" data-plan="Starter">
+              Start Free
+            </button>
+          </article>
+
+          <!-- Plan 2: Studio (Highlighted) -->
+          <article class="pricing-card pricing-card-featured">
+            <span class="popular-tag">Most Popular</span>
+            <div class="plan-header">
+              <h3>Studio</h3>
+              <p>For product teams &amp; design agencies.</p>
+            </div>
+            <div class="plan-price">
+              <span class="currency">$</span>
+              <span class="amount" data-monthly="16" data-yearly="13">16</span>
+              <span class="period">/ user / month</span>
+            </div>
+            <ul class="plan-features">
+              <li>Unlimited team members &amp; boards</li>
+              <li>Automated Friday client digests</li>
+              <li>Read-only client share links</li>
+              <li>Priority chat support</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-block select-plan-btn" data-plan="Studio">
+              Choose Studio
+            </button>
+          </article>
+
+          <!-- Plan 3: Scale -->
+          <article class="pricing-card">
+            <div class="plan-header">
+              <h3>Scale</h3>
+              <p>For multi-team agencies &amp; consultancies.</p>
+            </div>
+            <div class="plan-price">
+              <span class="currency">$</span>
+              <span class="amount" data-monthly="39" data-yearly="31">39</span>
+              <span class="period">/ user / month</span>
+            </div>
+            <ul class="plan-features">
+              <li>Everything in Studio</li>
+              <li>Custom domain client portals</li>
+              <li>Dedicated onboarding session</li>
+              <li>99.9% uptime SLA</li>
+            </ul>
+            <button type="button" class="btn btn-secondary btn-block select-plan-btn" data-plan="Scale">
+              Request Scale Demo
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT / DEMO REQUEST SECTION ================= -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <span class="section-eyebrow">Contact &amp; Demo</span>
+          <h2>Want to see Fieldnote on a real project?</h2>
+          <p>
+            Tell us a little about your team and we&rsquo;ll set up a live 15-minute walkthrough—no pushy sales deck.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <strong>Email</strong>
+              <span>hello@fieldnote.example</span>
+            </div>
+            <div class="contact-item">
+              <strong>Hours</strong>
+              <span>Mon &ndash; Fri, 9:30 AM &ndash; 6:30 PM IST</span>
+            </div>
+            <div class="contact-item">
+              <strong>Location</strong>
+              <span>Pune &amp; Remote</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <form id="demoForm" novalidate>
+            <div class="form-group">
+              <label for="fullName">Your Name <span class="required">*</span></label>
+              <input type="text" id="fullName" name="fullName" placeholder="e.g., Priya Nair" required />
+              <small class="error-message" id="nameError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="workEmail">Work Email <span class="required">*</span></label>
+              <input type="email" id="workEmail" name="workEmail" placeholder="e.g., priya@studio.in" required />
+              <small class="error-message" id="emailError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="planSelect">Plan</label>
+              <select id="planSelect" name="planSelect">
+                <option value="Starter">Starter (Free)</option>
+                <option value="Studio" selected>Studio ($16/user/mo)</option>
+                <option value="Scale">Scale ($39/user/mo)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">What are you working on? <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="3" placeholder="Team size, current tools, or questions..." required></textarea>
+              <small class="error-message" id="messageError"></small>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Request Demo</button>
+
+            <div class="form-success" id="formSuccess" role="status" aria-live="polite" hidden>
+              <strong>Got it!</strong> Your demo request is in. We&rsquo;ll reply to your email within one business day.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="logo">
+          <span class="logo-mark" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <rect width="24" height="24" rx="5" fill="currentColor" />
+              <path d="M7 8H17M7 12H14M7 16H11" stroke="#faf9f6" stroke-width="2.2" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span class="logo-text">Fieldnote</span>
+        </a>
+        <p>Calm deliverable tracking and weekly client updates for small product studios.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Get in Touch</h4>
+        <a href="#contact">Request Demo</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#top">Back to Top</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <span id="currentYear"></span> Fieldnote. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ================= QUICK SIGNUP MODAL ================= -->
+  <div class="modal-backdrop" id="demoModal" hidden aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button type="button" class="modal-close" id="closeModalBtn" aria-label="Close modal">&times;</button>
+      <h3 id="modalTitle">Create your Fieldnote workspace</h3>
+      <p>Enter your work email and we&rsquo;ll send your 14-day free trial link.</p>
+      <form id="quickSignupForm" novalidate>
+        <div class="form-group">
+          <label for="modalEmail">Work Email <span class="required">*</span></label>
+          <input type="email" id="modalEmail" placeholder="you@studio.com" required />
+          <small class="error-message" id="modalEmailError"></small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Invite Link</button>
+        <div class="form-success" id="modalSuccess" role="status" aria-live="polite" hidden>
+          <strong>Invite sent!</strong> Check your inbox to open your new workspace.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
